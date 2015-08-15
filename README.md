@@ -1,0 +1,2 @@
+# KcvExtension
+KanColleViewer Extension

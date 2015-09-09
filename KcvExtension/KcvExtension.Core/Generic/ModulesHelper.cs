@@ -82,20 +82,25 @@ namespace AMing.KcvExtension.Core.Generic
 
         #region event
 
-        //bool isActivated = false;
-        //private void Current_Activated(object sender, EventArgs e)
-        //{
-        //    if (isActivated)
-        //    {
-        //        return;
-        //    }
-        //    isActivated = true;
-        //    //InitModulesList();
-        //}
-        //private void Current_Exit(object sender, ExitEventArgs e)
-        //{
-        //    this.DisposeModulesList();
-        //}
+        public void InitMainWindowFristActivated()
+        {
+            Application.Current.Activated += Current_Activated;
+        }
+
+        bool isActivated = false;
+        private void Current_Activated(object sender, EventArgs e)
+        {
+            if (isActivated)
+            {
+                return;
+            }
+            isActivated = true;
+            ModulesList?.ForEach(x => x.Value.MainWindowFristActivated());
+        }
+        private void Current_Exit(object sender, ExitEventArgs e)
+        {
+            this.DisposeModulesList();
+        }
 
         #endregion
     }

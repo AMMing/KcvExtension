@@ -24,7 +24,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\..\KcvExtension%28Release%29\Core\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -48,6 +48,18 @@
     <Reference Include="Livet.Extensions">
       <HintPath>..\kcv\4.1\Livet.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="MetroRadiance, Version=1.1.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\kcv\4.1\MetroRadiance.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroRadiance.Core, Version=1.1.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\kcv\4.1\MetroRadiance.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroTrilithon.Desktop, Version=0.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\kcv\4.1\MetroTrilithon.Desktop.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -64,6 +76,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Collections\CommonEqualityComparer.cs" />
+    <Compile Include="Collections\ListViewModels.cs" />
+    <Compile Include="Controls\Settings.cs" />
     <Compile Include="Entrance.cs" />
     <Compile Include="Enums\ActionType.cs" />
     <Compile Include="Enums\MessageType.cs" />
@@ -84,6 +98,8 @@
     <Compile Include="Generic\PluginHelper.cs" />
     <Compile Include="Generic\SettingBase.cs" />
     <Compile Include="Generic\SettingsHelper.cs" />
+    <Compile Include="Helper\MessageBoxDialog.cs" />
+    <Compile Include="Helper\WPFHelper.cs" />
     <Compile Include="Helper\XmlFileWriterHelper.cs" />
     <Compile Include="Hosting\PluginHost.cs" />
     <Compile Include="Hub\DataPipeline.cs" />
@@ -110,7 +126,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TextResource.resx</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\SettingsViewModel.cs" />
+    <Compile Include="ViewModels\SelectedItemViewModel.cs" />
+    <Compile Include="ViewModels\Settings\SettingsViewModel.cs" />
+    <Compile Include="ViewModels\Settings\PluginItemViewModel.cs" />
+    <Compile Include="Views\MessageBoxDialog.xaml.cs">
+      <DependentUpon>MessageBoxDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SettingsControl.xaml.cs">
       <DependentUpon>SettingsControl.xaml</DependentUpon>
     </Compile>
@@ -122,7 +143,23 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\Controls.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MessageBoxDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\SettingsControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Slider.Metro.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

@@ -117,10 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="No" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>确定</value>
+  </data>
   <data name="Tool_Description" xml:space="preserve">
     <value>KanColleViewer Extension Core</value>
   </data>
   <data name="Tool_Name" xml:space="preserve">
     <value>KanColleViewer Extension Core</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>是</value>
   </data>
 </root>

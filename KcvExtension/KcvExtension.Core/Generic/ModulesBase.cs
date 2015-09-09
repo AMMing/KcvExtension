@@ -31,5 +31,9 @@ namespace AMing.KcvExtension.Core.Generic
         /// 释放模块
         /// </summary>
         public virtual void Dispose() { }
+        /// <summary>
+        /// 主窗体第一次获得焦点
+        /// </summary>
+        public virtual void MainWindowFristActivated() { }
     }
 }

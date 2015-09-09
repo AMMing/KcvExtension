@@ -21,7 +21,7 @@ namespace AMing.KcvExtension.Core
         public const string Version = "1.0";
 
 
-        private ViewModels.SettingsViewModel viewModel = new ViewModels.SettingsViewModel();
+        private ViewModels.Settings.SettingsViewModel viewModel = new ViewModels.Settings.SettingsViewModel();
 
         string kcvc.ITool.Name => TextResource.Tool_Name;
 

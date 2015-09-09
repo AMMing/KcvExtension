@@ -9,6 +9,43 @@
 			 xmlns:livet="http://schemas.livet-mvvm.net/2011/wpf"
              mc:Ignorable="d" 
              d:DesignWidth="500" >
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/AMing.KcvExtension.Core;Component/Views/Controls.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+
+            <DataTemplate x:Key="PluginItem">
+                <Border Width="100" Height="50">
+                    <Image Source="{Binding ItemButton}" Stretch="Fill" />
+                </Border>
+            </DataTemplate>
+
+        </ResourceDictionary>
+        
+        
+    </UserControl.Resources>
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <ListBox 
+            Background="Transparent"
+            ItemsSource="{Binding PluginList.List}" 
+            SelectedItem="{Binding PluginList.SelectedItem,Mode=TwoWay}" 
+            ItemTemplate="{DynamicResource PluginItem}"
+            ItemsPanel="{DynamicResource ItemsPanel_Horizontal}"
+            ScrollViewer.HorizontalScrollBarVisibility="Auto" 
+            ScrollViewer.VerticalScrollBarVisibility="Disabled" 
+            BorderThickness="0,0,1,0"
+            Padding="0"
+            />
+        <ContentControl 
+            DataContext="{Binding PluginList.SelectedItem}"
+            Content="{Binding SettingsView}"
+            Grid.Row="1"
+            />
     </Grid>
 </UserControl>

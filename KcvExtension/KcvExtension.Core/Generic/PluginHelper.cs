@@ -129,6 +129,7 @@ namespace AMing.KcvExtension.Core.Generic
             if (plugin.Modules != null)
             {
                 ModulesHelper.Current.AddModulesList(plugin.Modules);
+                ModulesHelper.Current.InitMainWindowFristActivated();
             }
 
             plugin.Initialize_End();

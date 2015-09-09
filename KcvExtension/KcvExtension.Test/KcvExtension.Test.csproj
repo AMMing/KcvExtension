@@ -34,6 +34,45 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Desktop.Metro">
+      <HintPath>..\kcv\4.1\Desktop.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="DesktopToast">
+      <HintPath>..\kcv\4.1\DesktopToast.dll</HintPath>
+    </Reference>
+    <Reference Include="KanColleViewer">
+      <HintPath>..\kcv\4.1\KanColleViewer.exe</HintPath>
+    </Reference>
+    <Reference Include="KanColleViewer.Composition">
+      <HintPath>..\kcv\4.1\KanColleViewer.Composition.dll</HintPath>
+    </Reference>
+    <Reference Include="KanColleViewer.Controls">
+      <HintPath>..\kcv\4.1\KanColleViewer.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="KanColleWrapper">
+      <HintPath>..\kcv\4.1\KanColleWrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Livet">
+      <HintPath>..\kcv\4.1\Livet.dll</HintPath>
+    </Reference>
+    <Reference Include="Livet.Extensions">
+      <HintPath>..\kcv\4.1\Livet.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroRadiance">
+      <HintPath>..\kcv\4.1\MetroRadiance.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroRadiance.Chrome">
+      <HintPath>..\kcv\4.1\MetroRadiance.Chrome.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroRadiance.Core">
+      <HintPath>..\kcv\4.1\MetroRadiance.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroTrilithon">
+      <HintPath>..\kcv\4.1\MetroTrilithon.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroTrilithon.Desktop">
+      <HintPath>..\kcv\4.1\MetroTrilithon.Desktop.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -98,6 +137,14 @@
     <ProjectReference Include="..\KcvExtension.Core\KcvExtension.Core.csproj">
       <Project>{29ae30d9-e5f0-4c58-99cb-ec4f3719ddb9}</Project>
       <Name>KcvExtension.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KcvExtension.Logger\KcvExtension.Logger.csproj">
+      <Project>{2bc3bd33-c3cd-4127-b8e9-397c31338b8e}</Project>
+      <Name>KcvExtension.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KcvExtension.Settings\KcvExtension.Settings.csproj">
+      <Project>{17f006a5-e879-4747-8c0f-33eb1671303d}</Project>
+      <Name>KcvExtension.Settings</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

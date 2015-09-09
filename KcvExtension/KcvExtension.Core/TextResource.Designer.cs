@@ -61,6 +61,24 @@ namespace AMing.KcvExtension.Core {
         }
         
         /// <summary>
+        ///   查找类似 否 的本地化字符串。
+        /// </summary>
+        internal static string No {
+            get {
+                return ResourceManager.GetString("No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 确定 的本地化字符串。
+        /// </summary>
+        internal static string Ok {
+            get {
+                return ResourceManager.GetString("Ok", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 KanColleViewer Extension Core 的本地化字符串。
         /// </summary>
         internal static string Tool_Description {
@@ -75,6 +93,15 @@ namespace AMing.KcvExtension.Core {
         internal static string Tool_Name {
             get {
                 return ResourceManager.GetString("Tool_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 是 的本地化字符串。
+        /// </summary>
+        internal static string Yes {
+            get {
+                return ResourceManager.GetString("Yes", resourceCulture);
             }
         }
     }

@@ -21,5 +21,9 @@ namespace AMing.KcvExtension.Core.Interface
         /// 初始化结束
         /// </summary>
         void Initialize_End();
+        /// <summary>
+        /// 主窗体第一次获得焦点
+        /// </summary>
+        void MainWindowFristActivated();
     }
 }

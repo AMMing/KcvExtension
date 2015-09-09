@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AllWindow" xml:space="preserve">
+    <value>全部窗体</value>
+  </data>
+  <data name="ChangeGhostMode" xml:space="preserve">
+    <value>切换幽灵模式</value>
+  </data>
+  <data name="ChangeTabs" xml:space="preserve">
+    <value>拆分面板Tabs模式下，切换游戏界面和信息栏</value>
+  </data>
+  <data name="ChangeWindowState" xml:space="preserve">
+    <value>改变窗体状态</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>修改</value>
+  </data>
+  <data name="Disable" xml:space="preserve">
+    <value>禁用</value>
+  </data>
+  <data name="DoubleClick" xml:space="preserve">
+    <value>双击</value>
+  </data>
+  <data name="Exit_Msg_Content" xml:space="preserve">
+    <value>确定关闭 KanColleViewer？ ( ° △ °|||)</value>
+  </data>
+  <data name="Exit_Msg_Title" xml:space="preserve">
+    <value>KanColleViewer</value>
+  </data>
+  <data name="FunctionKeys" xml:space="preserve">
+    <value>按键功能</value>
+  </data>
+  <data name="GhostEnableOpacity" xml:space="preserve">
+    <value>只在幽灵模式下启用透明度</value>
+  </data>
+  <data name="Hide" xml:space="preserve">
+    <value>隐藏</value>
+  </data>
+  <data name="Hotkey_Is_Already_Registered" xml:space="preserve">
+    <value>已经注册过的热键</value>
+  </data>
+  <data name="KanColleViewer" xml:space="preserve">
+    <value>KanColleViewer</value>
+  </data>
+  <data name="KeySetting_IsNotSetKey" xml:space="preserve">
+    <value>未设置</value>
+  </data>
+  <data name="KeysSetting" xml:space="preserve">
+    <value>按键设置</value>
+  </data>
+  <data name="KeysSettingTip" xml:space="preserve">
+    <value>注：全局热键最好设置多个按键，否则会影响到系统的其他软件正常使用</value>
+  </data>
+  <data name="KeyType" xml:space="preserve">
+    <value>按键类型</value>
+  </data>
+  <data name="KeyType_HotKey" xml:space="preserve">
+    <value>全局热键</value>
+  </data>
+  <data name="KeyType_Normal" xml:space="preserve">
+    <value>窗口快捷键</value>
+  </data>
+  <data name="NeedToOpen" xml:space="preserve">
+    <value>需要打开</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="NotifyIcon_ContextMenu_Exit" xml:space="preserve">
+    <value>退出</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>确定</value>
+  </data>
+  <data name="Opacity" xml:space="preserve">
+    <value>透明度</value>
+  </data>
+  <data name="Plugin_ToolName" xml:space="preserve">
+    <value>功能拓展</value>
+  </data>
+  <data name="Plugin_ToolName_keys" xml:space="preserve">
+    <value>按键设置</value>
+  </data>
+  <data name="Registration_HotKey_Failure" xml:space="preserve">
+    <value>注册热键失败</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>重置</value>
+  </data>
+  <data name="Screenshot" xml:space="preserve">
+    <value>截图</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>显示</value>
+  </data>
+  <data name="ShowShipCatalog" xml:space="preserve">
+    <value>显示舰娘一览窗体</value>
+  </data>
+  <data name="ShowSlotItemCatalog" xml:space="preserve">
+    <value>显示装备一览窗体</value>
+  </data>
+  <data name="SimpleFleet" xml:space="preserve">
+    <value>迷你舰队信息</value>
+  </data>
+  <data name="SimpleFleetStyle" xml:space="preserve">
+    <value>舰队信息样式</value>
+  </data>
+  <data name="SimpleFleetWindow" xml:space="preserve">
+    <value>迷你小窗口</value>
+  </data>
+  <data name="SimpleFleetWindow_Title" xml:space="preserve">
+    <value>迷你舰队信息</value>
+  </data>
+  <data name="TextBoxEnterKey" xml:space="preserve">
+    <value>请在文本框中按下想要设定的按键组合</value>
+  </data>
+  <data name="ToggleMute" xml:space="preserve">
+    <value>开关游戏声音</value>
+  </data>
+  <data name="Tool_EnableSimpleFleet_CheckBox" xml:space="preserve">
+    <value>显示简化版的一号舰队信息</value>
+  </data>
+  <data name="Tool_EnableSimpleFleet_Title" xml:space="preserve">
+    <value>显示一号舰队信息【肝船用 (σﾟ∀ﾟ)σ】</value>
+  </data>
+  <data name="Tool_Enable_ExitTip_CheckBox" xml:space="preserve">
+    <value>是否在关闭kcv时提示？</value>
+  </data>
+  <data name="Tool_Enable_ExitTip_Title" xml:space="preserve">
+    <value>退出提醒【防手滑 (*゜ロ゜)ノ】</value>
+  </data>
+  <data name="Tool_Enable_NotifyIcon_CheckBox" xml:space="preserve">
+    <value>是否将kcv添加到系统托盘？</value>
+  </data>
+  <data name="Tool_Enable_NotifyIcon_Title" xml:space="preserve">
+    <value>启用托盘【不用担心被老板发现任务栏的kcv了 (￣ε(#￣)☆】</value>
+  </data>
+  <data name="Tool_Enable_WindowMiniHideTaskbar_CheckBox" xml:space="preserve">
+    <value>kcv最小化的时候是否隐藏任务栏上的kcv（需要启用托盘）</value>
+  </data>
+  <data name="Tool_Enable_WindowMiniHideTaskbar_Title" xml:space="preserve">
+    <value>最小化时隐藏任务栏</value>
+  </data>
+  <data name="Tool_SimpleFleet_Loading" xml:space="preserve">
+    <value>等待舰队信息载入中...</value>
+  </data>
+  <data name="Tool_WindowsTheme_AccentColor" xml:space="preserve">
+    <value>前景色</value>
+  </data>
+  <data name="Tool_WindowsTheme_ThemeColor" xml:space="preserve">
+    <value>背景色</value>
+  </data>
+  <data name="Tool_WindowsTheme_Title" xml:space="preserve">
+    <value>设置kcv的窗口颜色主题</value>
+  </data>
+  <data name="Tool_WindowViewType_Title" xml:space="preserve">
+    <value>设置工具栏位置</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>是</value>
+  </data>
+</root>

@@ -109,6 +109,7 @@
     <Compile Include="Hub\ListenerMemberBase.cs" />
     <Compile Include="Hub\MethodHub.cs" />
     <Compile Include="Hub\RadioHub.cs" />
+    <Compile Include="Hub\SpecificListenerMember.cs" />
     <Compile Include="Interface\IClient.cs" />
     <Compile Include="Interface\IDynamicArgs.cs" />
     <Compile Include="Interface\IListenerMember.cs" />

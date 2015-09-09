@@ -44,8 +44,10 @@ namespace AMing.KcvExtension.Settings
         public override void InitModules()
         {
             base.InitModules();
+            this._modules.Add(WindowsModules.Current);
             this._modules.Add(ExitTipModules.Current);
             this._modules.Add(ThemeModules.Current);
+            this._modules.Add(NotifyIconModules.Current); 
         }
 
     }

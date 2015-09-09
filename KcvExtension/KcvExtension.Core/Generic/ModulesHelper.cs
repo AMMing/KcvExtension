@@ -85,6 +85,7 @@ namespace AMing.KcvExtension.Core.Generic
         public void InitMainWindowFristActivated()
         {
             Application.Current.Activated += Current_Activated;
+            Application.Current.Exit += Current_Exit;
         }
 
         bool isActivated = false;
@@ -99,7 +100,7 @@ namespace AMing.KcvExtension.Core.Generic
         }
         private void Current_Exit(object sender, ExitEventArgs e)
         {
-            this.DisposeModulesList();
+            ModulesList?.ForEach(x => x.Value.MainWindowExit());
         }
 
         #endregion

@@ -35,5 +35,11 @@ namespace AMing.KcvExtension.Core.Generic
         /// 主窗体第一次获得焦点
         /// </summary>
         public virtual void MainWindowFristActivated() { }
+        /// <summary>
+        /// 主窗体退出
+        /// </summary>
+        public virtual void MainWindowExit() { }
+
+        
     }
 }

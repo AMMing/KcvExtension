@@ -23,7 +23,7 @@ namespace AMing.KcvExtension.Core.Hub
         #endregion
 
         #region member
-        
+
         /// <summary>
         /// 所有收听者的集合
         /// </summary>
@@ -84,6 +84,27 @@ namespace AMing.KcvExtension.Core.Hub
             return Register(listenerMember);
         }
 
+
+        /// <summary>
+        /// 注册只接受指定key的收听者
+        /// </summary>
+        /// <param name="obj">监听的对象</param>
+        /// <param name="key">符合key就收听</param>
+        /// <param name="receive">广播的接收方法</param>
+        /// <returns></returns>
+        public bool RegisterSpecific(object obj, string key, Action<dynamic> receive)
+        {
+            var listenerMember = new SpecificListenerMember()
+            {
+                ListenerObject = obj,
+                ListenerKey = key,
+                Receive = receive
+            };
+
+            return Register(listenerMember);
+        }
+
+
         /// <summary>
         /// 注销收听者
         /// </summary>
@@ -106,7 +127,7 @@ namespace AMing.KcvExtension.Core.Hub
         /// </summary>
         /// <param name="key"></param>
         /// <param name="args"></param>
-        public void Send(string key, dynamic args)
+        public void Send(string key, dynamic args = null)
         {
             this.ListenerMemberList.Where(x => x.IsSend(key)).
                 ForEach(x => x.OnReceive(args));

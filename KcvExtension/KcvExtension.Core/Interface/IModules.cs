@@ -25,5 +25,9 @@ namespace AMing.KcvExtension.Core.Interface
         /// 主窗体第一次获得焦点
         /// </summary>
         void MainWindowFristActivated();
+        /// <summary>
+        /// 主窗体退出
+        /// </summary>
+        void MainWindowExit();
     }
 }

@@ -26,17 +26,12 @@ namespace AMing.KcvExtension.Settings.Modules
 
         void MainWindow_Closing(object o, CancelEventArgs e)
         {
-            if (!Data.Settings.SettingsCurrent.Settings.EnableExitTip)
-            {
-                return;
-            }
+            if (!Data.Settings.SettingsCurrent.Settings.EnableExitTip) return;
 
             if (!MessageBoxDialog.Show(TextResource.Exit_Msg_Content, TextResource.Exit_Msg_Title))
             {
                 e.Cancel = true;
             }
-
         }
-
     }
 }

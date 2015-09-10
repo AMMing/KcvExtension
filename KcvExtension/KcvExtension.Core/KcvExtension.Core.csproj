@@ -99,8 +99,10 @@
     <Compile Include="Generic\PluginHelper.cs" />
     <Compile Include="Generic\SettingBase.cs" />
     <Compile Include="Generic\SettingsHelper.cs" />
+    <Compile Include="Helper\KcvMainWindowControlHelper.cs" />
     <Compile Include="Helper\ListenerMemberHelper.cs" />
     <Compile Include="Helper\MessageBoxDialog.cs" />
+    <Compile Include="Helper\UIHelper.cs" />
     <Compile Include="Helper\WPFHelper.cs" />
     <Compile Include="Helper\XmlFileWriterHelper.cs" />
     <Compile Include="Hosting\PluginHost.cs" />

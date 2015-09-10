@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MetroRadiance;
 using static AMing.KcvExtension.Settings.Data.Settings;
+using AMing.KcvExtension.Core.Extensions;
 
 namespace AMing.KcvExtension.Settings.ViewModels.Settings
 {
@@ -25,7 +26,7 @@ namespace AMing.KcvExtension.Settings.ViewModels.Settings
 
                 return item;
             }).ToList();
-            
+
             WindowAccentList.GetListFunc = () => Modules.ThemeModules.Current.ThemeHelper.AccentList.Select(x =>
             {
                 var item = new ThemeItemViewModel<Accent, Models.ThemeItem<Accent>>(x.Value);
@@ -37,18 +38,26 @@ namespace AMing.KcvExtension.Settings.ViewModels.Settings
                 return item;
             }).ToList();
 
-
-            WindowThemeList.SelectedChange += (sender, e) =>
+            WindowViewTypeList.GetListFunc = () =>
             {
-                Modules.ThemeModules.Current.ChangeTheme(e.Type);
+                var list = new List<WindowViewTypeViewModel>();
+                EnumEx.ForEach<Enums.WindowViewType>(item =>
+                {
+                    var vm = new WindowViewTypeViewModel(item);
+                    list.Add(vm);
+
+                    if (item == SettingsCurrent.Settings.WindowViewType)
+                    {
+                        WindowViewTypeList.SelectedItem = vm;
+                    }
+                });
+                return list;
             };
 
-            WindowAccentList.SelectedChange += (sender, e) =>
-            {
-                Modules.ThemeModules.Current.ChangeAccent(e.Type);
-            };
 
-
+            WindowThemeList.SelectedChange += (sender, e) => Modules.ThemeModules.Current.ChangeTheme(e.Type);
+            WindowAccentList.SelectedChange += (sender, e) => Modules.ThemeModules.Current.ChangeAccent(e.Type);
+            WindowViewTypeList.SelectedChange += (sender, e) => Modules.WindowViewModules.Current.Change(e.Type);
         }
 
 
@@ -117,6 +126,14 @@ namespace AMing.KcvExtension.Settings.ViewModels.Settings
         #region WindowAccentList
 
         public ThemeListViewModels<Accent> WindowAccentList { get; } = new ThemeListViewModels<Accent>();
+
+        #endregion
+
+
+
+        #region WindowViewTypeList
+
+        public ListViewModels<WindowViewTypeViewModel> WindowViewTypeList { get; } = new ListViewModels<WindowViewTypeViewModel>();
 
         #endregion
     }

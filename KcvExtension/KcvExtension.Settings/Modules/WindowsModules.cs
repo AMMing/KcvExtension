@@ -118,7 +118,6 @@ namespace AMing.KcvExtension.Settings.Modules
                 Core.Enums.ListenerMemberType.Function,
                 $"{TextResource.Show}{TextResource.Hide}{TextResource.AllWindow}");
 
-
             RadioHub.Current.RegisterSpecific(this,
                 Data.MessageKeys.Windows_ToggleMute,
                 x => ToggleMute(),
@@ -144,7 +143,7 @@ namespace AMing.KcvExtension.Settings.Modules
                 $"{TextResource.ShowSlotItemCatalog}");
         }
         /// <summary>
-        /// 隐藏全部窗体
+        /// 关闭kcv
         /// </summary>
         void CloseWindows()
         {
@@ -220,17 +219,22 @@ namespace AMing.KcvExtension.Settings.Modules
         }
 
         OverviewViewModel GetOverviewViewModel() =>
-             (Application.Current.MainWindow?.DataContext as InformationViewModel)?.Overview;
+            Grabacr07.KanColleViewer.WindowService.Current?.Information?.Overview;
+
+        KanColleWindowViewModel GetKanColleWindowViewModel() =>
+            Application.Current.MainWindow?.DataContext as KanColleWindowViewModel;
+
+
         /// <summary>
         /// 开关声音
         /// </summary>
         void ToggleMute() =>
-            TryFunction(() => (Application.Current.MainWindow?.DataContext as KanColleWindowViewModel)?.Volume?.ToggleMute());
+            TryFunction(() => GetKanColleWindowViewModel()?.Volume?.ToggleMute());
         /// <summary>
         /// 截图
         /// </summary>
         void TakeScreenshot() =>
-            TryFunction(() => (Application.Current.MainWindow?.DataContext as KanColleWindowViewModel)?.TakeScreenshot());
+            TryFunction(() => GetKanColleWindowViewModel()?.TakeScreenshot());
         /// <summary>
         /// 舰娘一览
         /// </summary>

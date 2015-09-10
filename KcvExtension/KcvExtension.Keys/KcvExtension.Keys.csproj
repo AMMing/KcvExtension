@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{17F006A5-E879-4747-8C0F-33EB1671303D}</ProjectGuid>
+    <ProjectGuid>{8E022EE4-D9C8-4697-9803-9947967C2F08}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AMing.KcvExtension.Settings</RootNamespace>
-    <AssemblyName>AMing.KcvExtension.Settings</AssemblyName>
+    <RootNamespace>AMing.KcvExtension.Keys</RootNamespace>
+    <AssemblyName>AMing.KcvExtension.Keys</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -24,12 +24,16 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\KcvExtension%28Release%29\Settings\</OutputPath>
+    <OutputPath>..\..\KcvExtension%28Release%29\Keys\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DesktopToast, Version=0.2.2.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\kcv\4.1\DesktopToast.dll</HintPath>
+    </Reference>
     <Reference Include="KanColleViewer, Version=4.1.3.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\kcv\4.1\KanColleViewer.exe</HintPath>
@@ -54,21 +58,32 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\kcv\4.1\MetroRadiance.dll</HintPath>
     </Reference>
+    <Reference Include="MetroRadiance.Chrome, Version=1.1.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\kcv\4.1\MetroRadiance.Chrome.dll</HintPath>
+    </Reference>
     <Reference Include="MetroRadiance.Core, Version=1.1.0.2, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\kcv\4.1\MetroRadiance.Core.dll</HintPath>
     </Reference>
+    <Reference Include="MetroTrilithon, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\kcv\4.1\MetroTrilithon.dll</HintPath>
+    </Reference>
     <Reference Include="MetroTrilithon.Desktop, Version=0.1.2.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\kcv\4.1\MetroTrilithon.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Nekoxy, Version=1.5.0.18, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\kcv\4.1\Nekoxy.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -79,80 +94,30 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\AppendProperty.cs" />
-    <Compile Include="Controls\SplitWindowButton.xaml.cs">
-      <DependentUpon>SplitWindowButton.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\TabsWindowButton.xaml.cs">
-      <DependentUpon>TabsWindowButton.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\WindowViewTypeDataTemplateSelector.cs" />
-    <Compile Include="Data\MessageKeys.cs" />
-    <Compile Include="Data\ResourceService.cs" />
-    <Compile Include="Data\Setting.cs" />
     <Compile Include="Entrance.cs" />
-    <Compile Include="Enums\WindowViewType.cs" />
-    <Compile Include="Helper\ThemeHelper.cs" />
-    <Compile Include="Helper\WindowViewHelper.cs" />
-    <Compile Include="Models\Settings.cs" />
-    <Compile Include="Models\ThemeItem.cs" />
-    <Compile Include="Modules\ExitTipModules.cs" />
-    <Compile Include="Modules\NotifyIconModules.cs" />
-    <Compile Include="Modules\ThemeModules.cs" />
-    <Compile Include="Modules\WindowsModules.cs" />
-    <Compile Include="Modules\WindowViewModules.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TextResource.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TextResource.resx</DependentUpon>
-    </Compile>
     <Compile Include="ViewModels\Settings\SettingsViewModel.cs" />
-    <Compile Include="ViewModels\Settings\WindowViewTypeViewModel.cs" />
-    <Compile Include="ViewModels\Themes\ThemeItemViewModel.cs" />
-    <Compile Include="ViewModels\Themes\ThemeListViewModels.cs" />
-    <Compile Include="Views\ContainerWindow.xaml.cs">
-      <DependentUpon>ContainerWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\SettingsControl.xaml.cs">
       <DependentUpon>SettingsControl.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\KcvExtension.Core\KcvExtension.Core.csproj">
-      <Project>{29ae30d9-e5f0-4c58-99cb-ec4f3719ddb9}</Project>
-      <Name>KcvExtension.Core</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\icon.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Controls\SplitWindowButton.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Controls\TabsWindowButton.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\ContainerWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
+    <Resource Include="Images\setting_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Page Include="Views\SettingsControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\setting_bg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="TextResource.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>TextResource.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <ProjectReference Include="..\KcvExtension.Core\KcvExtension.Core.csproj">
+      <Project>{29ae30d9-e5f0-4c58-99cb-ec4f3719ddb9}</Project>
+      <Name>KcvExtension.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

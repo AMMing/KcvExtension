@@ -18,5 +18,7 @@ namespace AMing.KcvExtension.Settings.Models
         public Theme WindowTheme_Theme { get; set; } = Theme.Dark;
 
         public Accent WindowTheme_Accent { get; set; } = Accent.Blue;
+
+        public Enums.WindowViewType WindowViewType { get; set; }
     }
 }

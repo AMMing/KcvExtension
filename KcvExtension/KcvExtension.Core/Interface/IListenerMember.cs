@@ -30,5 +30,18 @@ namespace AMing.KcvExtension.Core.Interface
         /// </summary>
         /// <param name="args"></param>
         void OnReceive(dynamic args);
+        /// <summary>
+        /// 类型
+        /// </summary>
+        Enums.ListenerMemberType Type { get; }
+        /// <summary>
+        /// 名称
+        /// </summary>
+        string Name { get; }
+        /// <summary>
+        /// 唯一的收听Key 注册的时候生成
+        /// </summary>
+        string OnlyListenerKey { get; set; }
+
     }
 }

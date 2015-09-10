@@ -70,6 +70,7 @@ namespace AMing.KcvExtension.Core.Hub
             {
                 ListenerKey = GetListenerKey(this.MethodKey),
                 ListenerObject = this,
+                Type = Enums.ListenerMemberType.DataMethod,
                 Receive = x =>
                 {
                     this.OnDataResult(new Model.DataPipelineResult

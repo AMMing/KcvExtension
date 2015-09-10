@@ -97,6 +97,15 @@ namespace AMing.KcvExtension.Settings {
         }
         
         /// <summary>
+        ///   查找类似 关闭 KanColleViewer 的本地化字符串。
+        /// </summary>
+        public static string Close_Kcv {
+            get {
+                return ResourceManager.GetString("Close_Kcv", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 修改 的本地化字符串。
         /// </summary>
         public static string Confirm {

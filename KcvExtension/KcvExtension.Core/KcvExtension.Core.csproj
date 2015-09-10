@@ -80,6 +80,7 @@
     <Compile Include="Controls\Settings.cs" />
     <Compile Include="Entrance.cs" />
     <Compile Include="Enums\ActionType.cs" />
+    <Compile Include="Enums\ListenerMemberType.cs" />
     <Compile Include="Enums\MessageType.cs" />
     <Compile Include="Enums\ModulesChangeEventArgsType.cs" />
     <Compile Include="Enums\ModulesType.cs" />
@@ -98,6 +99,7 @@
     <Compile Include="Generic\PluginHelper.cs" />
     <Compile Include="Generic\SettingBase.cs" />
     <Compile Include="Generic\SettingsHelper.cs" />
+    <Compile Include="Helper\ListenerMemberHelper.cs" />
     <Compile Include="Helper\MessageBoxDialog.cs" />
     <Compile Include="Helper\WPFHelper.cs" />
     <Compile Include="Helper\XmlFileWriterHelper.cs" />

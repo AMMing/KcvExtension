@@ -23,5 +23,13 @@ namespace AMing.KcvExtension.Settings.Data
         public const string Windows_Hide_All = "windows.hide.all";
 
         public const string Windows_ShowOrHide_All = "windows.show.hide.all";
+
+        public const string Windows_ToggleMute = "windows.toggle.mute";
+
+        public const string Windows_TakeScreenshot = "windows.take.screenshot";
+
+        public const string Windows_ShowShipCatalog = "windows.show.ship.catalog";
+
+        public const string Windows_ShowSlotItemCatalog = "windows.show.slot.item.catalog";
     }
 }

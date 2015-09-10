@@ -12,6 +12,13 @@ namespace AMing.KcvExtension.Core.Hub
     /// </summary>
     public class ListenerMember : ListenerMemberBase
     {
+        public ListenerMember() { }
+        public ListenerMember(object obj, string key, Action<dynamic> receive)
+        {
+            this.ListenerObject = obj;
+            this.ListenerKey = key;
+            this.Receive = receive;
+        }
         /// <summary>
         /// 符合key就收听
         /// </summary>
@@ -23,6 +30,8 @@ namespace AMing.KcvExtension.Core.Hub
         /// <returns></returns>
         public override bool IsSend(string key)
         {
+            if (this.OnlyListenerKey.Equals(key)) return true;
+
             if (string.IsNullOrWhiteSpace(key) || string.IsNullOrWhiteSpace(this.ListenerKey)) return false;
 
             if (RadioHub.IsSendAll(key)) return true;//默认接受全部消息

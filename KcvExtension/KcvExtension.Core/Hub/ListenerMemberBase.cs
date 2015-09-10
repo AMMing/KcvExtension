@@ -31,5 +31,17 @@ namespace AMing.KcvExtension.Core.Hub
         /// </summary>
         /// <param name="args"></param>
         public abstract void OnReceive(dynamic args);
+        /// <summary>
+        /// 类型
+        /// </summary>
+        public virtual Enums.ListenerMemberType Type { get; set; } = Enums.ListenerMemberType.Function;
+        /// <summary>
+        /// 名称
+        /// </summary>
+        public virtual string Name { get; set; }
+        /// <summary>
+        /// 唯一的收听Key 注册的时候生成
+        /// </summary>
+        public virtual string OnlyListenerKey { get; set; }
     }
 }

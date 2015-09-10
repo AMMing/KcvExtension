@@ -276,4 +276,7 @@
   <data name="Yes" xml:space="preserve">
     <value>是</value>
   </data>
+  <data name="Close_Kcv" xml:space="preserve">
+    <value>关闭 KanColleViewer</value>
+  </data>
 </root>

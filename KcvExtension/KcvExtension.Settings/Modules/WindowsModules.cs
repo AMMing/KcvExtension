@@ -7,6 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using AMing.KcvExtension.Core.Hub;
+using Grabacr07.KanColleViewer.ViewModels.Contents;
+using Grabacr07.KanColleViewer.ViewModels;
+using AMing.KcvExtension.Core.Helper;
 
 namespace AMing.KcvExtension.Settings.Modules
 {
@@ -93,28 +96,59 @@ namespace AMing.KcvExtension.Settings.Modules
 
         void InitPublicModules()
         {
-            RadioHub.Current.RegisterSpecific(this, Data.MessageKeys.Windows_Close, x => CloseWindows());
-            RadioHub.Current.RegisterSpecific(this, Data.MessageKeys.Windows_Hide_All, x => HideAllWindows());
-            RadioHub.Current.RegisterSpecific(this, Data.MessageKeys.Windows_Show_All, x => ShowAllWindows());
-            RadioHub.Current.RegisterSpecific(this, Data.MessageKeys.Windows_ShowOrHide_All, x => ChangeAllWindowsByMainWindow());
+            RadioHub.Current.RegisterSpecific(this,
+                Data.MessageKeys.Windows_Close,
+                x => CloseWindows());
+
+            RadioHub.Current.RegisterSpecific(this,
+                Data.MessageKeys.Windows_Hide_All,
+                x => HideAllWindows(),
+                Core.Enums.ListenerMemberType.Function,
+                $"{TextResource.Hide}{TextResource.AllWindow}");
+
+            RadioHub.Current.RegisterSpecific(this,
+                Data.MessageKeys.Windows_Show_All,
+                x => ShowAllWindows(),
+                Core.Enums.ListenerMemberType.Function,
+                $"{TextResource.Show}{TextResource.AllWindow}");
+
+            RadioHub.Current.RegisterSpecific(this,
+                Data.MessageKeys.Windows_ShowOrHide_All,
+                x => ChangeAllWindowsByMainWindow(),
+                Core.Enums.ListenerMemberType.Function,
+                $"{TextResource.Show}{TextResource.Hide}{TextResource.AllWindow}");
+
+
+            RadioHub.Current.RegisterSpecific(this,
+                Data.MessageKeys.Windows_ToggleMute,
+                x => ToggleMute(),
+                Core.Enums.ListenerMemberType.Function,
+                $"{TextResource.ToggleMute}");
+
+            RadioHub.Current.RegisterSpecific(this,
+                Data.MessageKeys.Windows_TakeScreenshot,
+                x => TakeScreenshot(),
+                Core.Enums.ListenerMemberType.Function,
+                $"{TextResource.Screenshot}");
+
+            RadioHub.Current.RegisterSpecific(this,
+                Data.MessageKeys.Windows_ShowShipCatalog,
+                x => ShowShipCatalog(),
+                Core.Enums.ListenerMemberType.Function,
+                $"{TextResource.ShowShipCatalog}");
+
+            RadioHub.Current.RegisterSpecific(this,
+                Data.MessageKeys.Windows_ShowSlotItemCatalog,
+                x => ShowSlotItemCatalog(),
+                Core.Enums.ListenerMemberType.Function,
+                $"{TextResource.ShowSlotItemCatalog}");
         }
         /// <summary>
         /// 隐藏全部窗体
         /// </summary>
         void CloseWindows()
         {
-            if (Application.Current.Windows != null)
-            {
-                foreach (var item in Application.Current.Windows)
-                {
-                    var win = item as Window;
-                    if (win != null && win.IsInitialized)
-                    {
-                        WindowShowHideForTaskBar(win, false);
-                        win.WindowState = WindowState.Minimized;
-                    }
-                }
-            }
+            Application.Current.MainWindow.Close();
         }
         /// <summary>
         /// 隐藏全部窗体
@@ -171,6 +205,44 @@ namespace AMing.KcvExtension.Settings.Modules
                 }
             }
         }
+
+        void TryFunction(Action action)
+        {
+            try
+            {
+                action();
+            }
+            catch (Exception ex)
+            {
+                RadioHub.Current.SendException(ex);
+                MessageBoxDialog.Show(ex.Message);
+            }
+        }
+
+        OverviewViewModel GetOverviewViewModel() =>
+             (Application.Current.MainWindow?.DataContext as InformationViewModel)?.Overview;
+        /// <summary>
+        /// 开关声音
+        /// </summary>
+        void ToggleMute() =>
+            TryFunction(() => (Application.Current.MainWindow?.DataContext as KanColleWindowViewModel)?.Volume?.ToggleMute());
+        /// <summary>
+        /// 截图
+        /// </summary>
+        void TakeScreenshot() =>
+            TryFunction(() => (Application.Current.MainWindow?.DataContext as KanColleWindowViewModel)?.TakeScreenshot());
+        /// <summary>
+        /// 舰娘一览
+        /// </summary>
+        void ShowShipCatalog() =>
+            TryFunction(() => GetOverviewViewModel()?.ShowShipCatalog());
+        /// <summary>
+        /// 装备一览
+        /// </summary>
+        void ShowSlotItemCatalog() =>
+            TryFunction(() => GetOverviewViewModel()?.ShowSlotItemCatalog());
+
+
         #endregion
     }
 }

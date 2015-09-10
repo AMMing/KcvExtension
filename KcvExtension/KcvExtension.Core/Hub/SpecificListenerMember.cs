@@ -11,9 +11,17 @@ namespace AMing.KcvExtension.Core.Hub
     /// </summary>
     public class SpecificListenerMember : ListenerMember
     {
+        public SpecificListenerMember() { }
+        public SpecificListenerMember(object obj, string key, Action<dynamic> receive)
+        {
+            this.ListenerObject = obj;
+            this.ListenerKey = key;
+            this.Receive = receive;
+        }
+
         public override bool IsSend(string key)
         {
-            return this.ListenerKey.Equals(key);
+            return this.OnlyListenerKey.Equals(key) || this.ListenerKey.Equals(key);
         }
     }
 }

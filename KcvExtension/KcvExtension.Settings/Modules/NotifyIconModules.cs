@@ -34,6 +34,7 @@ namespace AMing.KcvExtension.Settings.Modules
 
             InitNotifyIcon();
             ResetNotifyIconVisible();
+            InitPublicModules();
 
             RadioHub.Current.Register(this, Data.MessageKeys.Windows_State_Changed, x =>
             {
@@ -111,49 +112,33 @@ namespace AMing.KcvExtension.Settings.Modules
 
         #region PublicModules
 
-        //public List<ModulesItem> CurrentPublicModules { get; set; }
 
-        //void InitPublicModules()
-        //{
-        //    if (_notifyIcon == null || !_notifyInit)
-        //    {
-        //        return;
-        //    }
-        //    CurrentPublicModules = new List<ModulesItem>();
-        //    PublicModules.Current.PublicModulesList.ForEach(item => AddPublicModules(item));
+        public Core.Helper.ListenerMemberHelper ListenerMemberHelper { get; private set; }
 
-        //    PublicModules.Current.ModulesChange += (sender, e) =>
-        //    {
-        //        if (e.Type == ModulesChangeEventArgsType.Add)
-        //        {
-        //            e.ChangeList.ForEach(item => AddPublicModules(item));
-        //        }
-        //    };
-        //}
+        void InitPublicModules()
+        {
+            if (_notifyIcon == null || !_notifyInit)
+            {
+                return;
+            }
+            ListenerMemberHelper = new Core.Helper.ListenerMemberHelper(Core.Enums.ListenerMemberType.Function, AddPublicModules);
+        }
 
-        //void AddPublicModules(ModulesItem modulesItem)
-        //{
-        //    if ((modulesItem.Type != ModulesType.Pubilc &&
-        //        modulesItem.Type != ModulesType.NotifyIcon) ||
-        //        CurrentPublicModules.Contains(modulesItem))
-        //    {
-        //        return;
-        //    }
-        //    CurrentPublicModules.Add(modulesItem);
+        void AddPublicModules(Core.Interface.IListenerMember listenerMember)
+        {
 
-        //    var menuItem = new winforms.MenuItem
-        //    {
-        //        Text = modulesItem.ModulesName,
-        //        Tag = modulesItem.ModulesKey
-        //    };
-        //    menuItem.Click += (sender, e) => MessagerModules.Current.Send(modulesItem.MessageKey);
-        //    modulesItem.RegisterEnabelChangeCallbck(isenabel => menuItem.Enabled = isenabel);
+            var menuItem = new winforms.MenuItem
+            {
+                Text = listenerMember.Name,
+                Tag = listenerMember.OnlyListenerKey
+            };
+            menuItem.Click += (sender, e) => RadioHub.Current.Send(listenerMember.OnlyListenerKey);
 
-        //    contextMenu.MenuItems.Add(menuItem);
-        //    //-,-为了将退出项移到最后一个
-        //    contextMenu.MenuItems.Remove(exitItem);
-        //    contextMenu.MenuItems.Add(exitItem);
-        //}
+            contextMenu.MenuItems.Add(menuItem);
+            //-,-为了将退出项移到最后一个
+            contextMenu.MenuItems.Remove(exitItem);
+            contextMenu.MenuItems.Add(exitItem);
+        }
         #endregion
 
         #endregion

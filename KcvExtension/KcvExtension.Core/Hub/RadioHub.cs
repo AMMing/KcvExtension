@@ -19,6 +19,13 @@ namespace AMing.KcvExtension.Core.Hub
         /// </summary>
         public static RadioHub Current { get; } = new RadioHub();
 
+        /// <summary>
+        /// 添加新的监听者时触发
+        /// </summary>
+        public event EventHandler<Interface.IListenerMember> AddListenerMember;
+
+        private void OnAddListenerMember(Interface.IListenerMember args) =>
+            AddListenerMember?.Invoke(this, args);
 
         #endregion
 
@@ -53,6 +60,15 @@ namespace AMing.KcvExtension.Core.Hub
 
             return this.HasListenerMember(listenerMember.ListenerObject, listenerMember.Receive);
         }
+        /// <summary>
+        /// 获取指定类型的监听者列表
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        public List<Interface.IListenerMember> GetListenerMemberByType(Enums.ListenerMemberType type)
+        {
+            return this.ListenerMemberList.Where(x => x.Type.HasFlag(type))?.ToList();
+        }
 
         /// <summary>
         /// 注册收听者
@@ -61,7 +77,9 @@ namespace AMing.KcvExtension.Core.Hub
         /// <returns></returns>
         public bool Register(Interface.IListenerMember listenerMember)
         {
+            listenerMember.OnlyListenerKey = Guid.NewGuid().ToString();
             this.ListenerMemberList.Add(listenerMember);
+            this.OnAddListenerMember(listenerMember);
 
             return true;
         }
@@ -72,13 +90,12 @@ namespace AMing.KcvExtension.Core.Hub
         /// <param name="key">符合key就收听</param>
         /// <param name="receive">广播的接收方法</param>
         /// <returns></returns>
-        public bool Register(object obj, string key, Action<dynamic> receive)
+        public bool Register(object obj, string key, Action<dynamic> receive, Enums.ListenerMemberType type = Enums.ListenerMemberType.Normal, string name = null)
         {
-            var listenerMember = new ListenerMember()
+            var listenerMember = new ListenerMember(obj, key, receive)
             {
-                ListenerObject = obj,
-                ListenerKey = key,
-                Receive = receive
+                Type = type,
+                Name = name ?? obj.ToString()
             };
 
             return Register(listenerMember);
@@ -92,13 +109,12 @@ namespace AMing.KcvExtension.Core.Hub
         /// <param name="key">符合key就收听</param>
         /// <param name="receive">广播的接收方法</param>
         /// <returns></returns>
-        public bool RegisterSpecific(object obj, string key, Action<dynamic> receive)
+        public bool RegisterSpecific(object obj, string key, Action<dynamic> receive, Enums.ListenerMemberType type = Enums.ListenerMemberType.Normal, string name = null)
         {
-            var listenerMember = new SpecificListenerMember()
+            var listenerMember = new SpecificListenerMember(obj, key, receive)
             {
-                ListenerObject = obj,
-                ListenerKey = key,
-                Receive = receive
+                Type = type,
+                Name = name ?? obj.ToString()
             };
 
             return Register(listenerMember);

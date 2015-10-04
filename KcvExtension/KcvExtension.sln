@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KcvExtension.Logger", "KcvE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KcvExtension.Keys", "KcvExtension.Keys\KcvExtension.Keys.csproj", "{8E022EE4-D9C8-4697-9803-9947967C2F08}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KcvExtension.Debug", "KcvExtension.Debug\KcvExtension.Debug.csproj", "{4DC74221-A668-45AB-872F-74B37CA15A79}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{8E022EE4-D9C8-4697-9803-9947967C2F08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E022EE4-D9C8-4697-9803-9947967C2F08}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E022EE4-D9C8-4697-9803-9947967C2F08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DC74221-A668-45AB-872F-74B37CA15A79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DC74221-A668-45AB-872F-74B37CA15A79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DC74221-A668-45AB-872F-74B37CA15A79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DC74221-A668-45AB-872F-74B37CA15A79}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,5 +66,6 @@ Global
 		{17F006A5-E879-4747-8C0F-33EB1671303D} = {6DB0825E-69E6-4365-923E-15104B09BC46}
 		{2BC3BD33-C3CD-4127-B8E9-397C31338B8E} = {6DB0825E-69E6-4365-923E-15104B09BC46}
 		{8E022EE4-D9C8-4697-9803-9947967C2F08} = {6DB0825E-69E6-4365-923E-15104B09BC46}
+		{4DC74221-A668-45AB-872F-74B37CA15A79} = {6DB0825E-69E6-4365-923E-15104B09BC46}
 	EndGlobalSection
 EndGlobal

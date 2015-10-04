@@ -88,7 +88,7 @@ namespace AMing.KcvExtension.Core {
         }
         
         /// <summary>
-        ///   查找类似 KanColleViewer Extension Core 的本地化字符串。
+        ///   查找类似 拓展功能 的本地化字符串。
         /// </summary>
         internal static string Tool_Name {
             get {

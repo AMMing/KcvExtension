@@ -23,8 +23,8 @@
             </DataTemplate>
 
         </ResourceDictionary>
-        
-        
+
+
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -42,10 +42,15 @@
             BorderThickness="0,0,1,0"
             Padding="0"
             />
-        <ContentControl 
-            DataContext="{Binding PluginList.SelectedItem}"
-            Content="{Binding SettingsView}"
-            Grid.Row="1"
+        <ScrollViewer 
+            HorizontalScrollBarVisibility="Hidden" 
+            VerticalScrollBarVisibility="Auto"
+            Grid.Row="1">
+            <ContentControl 
+                DataContext="{Binding PluginList.SelectedItem}"
+                Content="{Binding SettingsView}"
             />
+        </ScrollViewer>
     </Grid>
+
 </UserControl>

@@ -138,6 +138,14 @@
       <Project>{29ae30d9-e5f0-4c58-99cb-ec4f3719ddb9}</Project>
       <Name>KcvExtension.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\KcvExtension.Debug\KcvExtension.Debug.csproj">
+      <Project>{4dc74221-a668-45ab-872f-74b37ca15a79}</Project>
+      <Name>KcvExtension.Debug</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KcvExtension.Keys\KcvExtension.Keys.csproj">
+      <Project>{8e022ee4-d9c8-4697-9803-9947967c2f08}</Project>
+      <Name>KcvExtension.Keys</Name>
+    </ProjectReference>
     <ProjectReference Include="..\KcvExtension.Logger\KcvExtension.Logger.csproj">
       <Project>{2bc3bd33-c3cd-4127-b8e9-397c31338b8e}</Project>
       <Name>KcvExtension.Logger</Name>

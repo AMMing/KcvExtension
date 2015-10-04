@@ -24,7 +24,9 @@ namespace AMing.KcvExtension.Core.ViewModels.Settings
         {
             GetListFunc = () =>
                 Generic.PluginHelper.Current.Plugins.Select(
-                    x => new PluginItemViewModel(x.Value)).ToList()
+                    x => new PluginItemViewModel(x.Value)).ToList(),
+            SetDefaultFunc =list =>
+                list?.FirstOrDefault()
         };
 
         #endregion

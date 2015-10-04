@@ -23,6 +23,10 @@ namespace AMing.KcvExtension.Core.Collections
                     var result = GetListFunc();
 
                     this.List = result;
+                    if (SetDefaultFunc != null)
+                    {
+                        this.SelectedItem = SetDefaultFunc(result);
+                    }
                 }
 
                 return _list;
@@ -63,6 +67,8 @@ namespace AMing.KcvExtension.Core.Collections
 
 
         public Func<IList<T>> GetListFunc { get; set; }
+        public Func<IList<T>, T> SetDefaultFunc { get; set; }
+
 
         public event EventHandler<T> SelectedChange;
 

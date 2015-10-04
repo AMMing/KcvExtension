@@ -76,6 +76,8 @@ namespace AMing.KcvExtension.Settings.Modules
                 Data.Settings.SettingsCurrent.Settings.WindowViewType = type;
                 SetWindow();
             }
+
+            RadioHub.Current.Send($"{RadioHub.Send_Exception}_Log", $"{type}");
         }
     }
 }

@@ -31,7 +31,7 @@ namespace AMing.KcvExtension.Core.Hosting
         {
             var catalog = new AggregateCatalog(new AssemblyCatalog(Assembly.GetExecutingAssembly()));
 
-            var current = Path.GetDirectoryName(Assembly.GetCallingAssembly().Location);
+            var current = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
             if (current != null)
             {
                 var pluginsPath = Path.Combine(current, PluginsDirectory);

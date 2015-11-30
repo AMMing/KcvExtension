@@ -36,7 +36,7 @@ namespace AMing.KcvExtension.Debug.Modules
                     SettingsVM.DebugMessage += $"Log:\n  {arg}\n";
             });
 
-            RadioHub.Current.Send($"{RadioHub.Send_Exception}_Log", "Debug init.");
+            RadioHub.Current.Send($"{RadioHub.Send_Exception}_Log", "Debug Initialization.");
         }
 
         private void Current_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)

@@ -48,6 +48,14 @@
     <Reference Include="Livet.Extensions">
       <HintPath>..\kcv\4.1\Livet.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="MetroTrilithon, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\kcv\4.1\MetroTrilithon.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroTrilithon.Desktop, Version=0.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\kcv\4.1\MetroTrilithon.Desktop.dll</HintPath>
+    </Reference>
     <Reference Include="Nekoxy">
       <HintPath>..\kcv\4.1\Nekoxy.dll</HintPath>
     </Reference>

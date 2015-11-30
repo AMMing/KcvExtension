@@ -8,6 +8,7 @@
             xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
 			xmlns:livet="http://schemas.livet-mvvm.net/2011/wpf"
             xmlns:coreControls ="clr-namespace:AMing.KcvExtension.Core.Controls;assembly=AMing.KcvExtension.Core"
+			xmlns:metro2="clr-namespace:MetroTrilithon.Controls;assembly=MetroTrilithon.Desktop"
             mc:Ignorable="d" 
             d:DesignWidth="500" 
                 
@@ -16,5 +17,6 @@
             >
     <Grid>
         <TextBlock Text="ceshi" />
+        <metro2:CallMethodButton MethodName="Test">test</metro2:CallMethodButton>
     </Grid>
 </coreControls:Settings>

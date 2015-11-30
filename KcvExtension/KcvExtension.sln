@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KcvExtension.Keys", "KcvExt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KcvExtension.Debug", "KcvExtension.Debug\KcvExtension.Debug.csproj", "{4DC74221-A668-45AB-872F-74B37CA15A79}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{922AD1C1-C53B-4C8B-B7D1-691F969BB0F4}"
+EndProject
+Project("{F5034706-568F-408A-B7B3-4D38C6DB8A32}") = "PowerShellHelper", "PowerShellHelper\PowerShellHelper.pssproj", "{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +59,10 @@ Global
 		{4DC74221-A668-45AB-872F-74B37CA15A79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DC74221-A668-45AB-872F-74B37CA15A79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DC74221-A668-45AB-872F-74B37CA15A79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,5 +75,6 @@ Global
 		{2BC3BD33-C3CD-4127-B8E9-397C31338B8E} = {6DB0825E-69E6-4365-923E-15104B09BC46}
 		{8E022EE4-D9C8-4697-9803-9947967C2F08} = {6DB0825E-69E6-4365-923E-15104B09BC46}
 		{4DC74221-A668-45AB-872F-74B37CA15A79} = {6DB0825E-69E6-4365-923E-15104B09BC46}
+		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51} = {922AD1C1-C53B-4C8B-B7D1-691F969BB0F4}
 	EndGlobalSection
 EndGlobal

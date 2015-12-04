@@ -108,37 +108,45 @@ namespace AMing.KcvExtension.Settings.Helper
 
         #region Top Bottom Left Right
 
-        /// <summary>
-        /// 工具栏居上
-        /// </summary>
-        /// <returns></returns>
-        public void TopWindow() =>
-            SettingsViewModel.Instance?.WindowSettings.SetDockSettings(System.Windows.Controls.Dock.Top);
+        ///// <summary>
+        ///// 工具栏居上
+        ///// </summary>
+        ///// <returns></returns>
+        //public void TopWindow() =>
+        //    SettingsViewModel.Instance?.WindowSettings.SetDockSettings(System.Windows.Controls.Dock.Top);
+
+        ///// <summary>
+        ///// 工具栏居底部
+        ///// </summary>
+        ///// <returns></returns>
+        //public void BottomWindow() =>
+        //    SettingsViewModel.Instance?.WindowSettings.SetDockSettings(System.Windows.Controls.Dock.Bottom);
+        ///// <summary>
+        ///// 工具栏居左
+        ///// </summary>
+        ///// <returns></returns>
+        //public void LeftWindow() =>
+        //    SettingsViewModel.Instance?.WindowSettings.SetDockSettings(System.Windows.Controls.Dock.Left);
+        ///// <summary>
+        ///// 工具栏居右
+        ///// </summary>
+        ///// <returns></returns>
+        //public void RightWindow() =>
+        //    SettingsViewModel.Instance?.WindowSettings.SetDockSettings(System.Windows.Controls.Dock.Right);
+        ///// <summary>
+        ///// 拆分窗体
+        ///// </summary>
+        ///// <returns></returns>
+        //public void SplitWindow() =>
+        //    SettingsViewModel.Instance.WindowSettings.IsSplit = true;
 
         /// <summary>
-        /// 工具栏居底部
+        /// 还原成kcv设置的样式
         /// </summary>
-        /// <returns></returns>
-        public void BottomWindow() =>
-            SettingsViewModel.Instance?.WindowSettings.SetDockSettings(System.Windows.Controls.Dock.Bottom);
-        /// <summary>
-        /// 工具栏居左
-        /// </summary>
-        /// <returns></returns>
-        public void LeftWindow() =>
-            SettingsViewModel.Instance?.WindowSettings.SetDockSettings(System.Windows.Controls.Dock.Left);
-        /// <summary>
-        /// 工具栏居右
-        /// </summary>
-        /// <returns></returns>
-        public void RightWindow() =>
-            SettingsViewModel.Instance?.WindowSettings.SetDockSettings(System.Windows.Controls.Dock.Right);
-        /// <summary>
-        /// 拆分窗体
-        /// </summary>
-        /// <returns></returns>
-        public void SplitWindow() =>
-            SettingsViewModel.Instance.WindowSettings.IsSplit = true;
+        public void SetDefaultWindow()
+        {
+
+        }
 
         #endregion
 

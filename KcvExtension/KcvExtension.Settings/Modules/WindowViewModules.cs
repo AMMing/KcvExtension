@@ -28,7 +28,7 @@ namespace AMing.KcvExtension.Settings.Modules
 #if DEBUG
             return;
 #endif
-            if (Data.Settings.SettingsCurrent.Settings.WindowViewType != Enums.WindowViewType.Bottom)
+            if (Data.Settings.SettingsCurrent.Settings.WindowViewType != Enums.WindowViewType.Default)
             {
                 SetWindow();
             }
@@ -39,20 +39,8 @@ namespace AMing.KcvExtension.Settings.Modules
         {
             switch (Data.Settings.SettingsCurrent.Settings.WindowViewType)
             {
-                case WindowViewType.Bottom:
-                    WindowViewHelper.BottomWindow();
-                    break;
-                case WindowViewType.Top:
-                    WindowViewHelper.TopWindow();
-                    break;
-                case WindowViewType.Left:
-                    WindowViewHelper.LeftWindow();
-                    break;
-                case WindowViewType.Right:
-                    WindowViewHelper.RightWindow();
-                    break;
-                case WindowViewType.Split:
-                    WindowViewHelper.SplitWindow();
+                case WindowViewType.Default:
+                    WindowViewHelper.SetDefaultWindow();
                     break;
                 case WindowViewType.Tabs:
                     WindowViewHelper.TabsWindow();
@@ -64,15 +52,15 @@ namespace AMing.KcvExtension.Settings.Modules
 
         public void Change(WindowViewType type)
         {
-            System.Threading.Thread.Sleep(200);//太快导致左右切换重复触发
+            //System.Threading.Thread.Sleep(200);//太快导致左右切换重复触发
             if (Data.Settings.SettingsCurrent.Settings.WindowViewType != type)
             {
-                switch (Data.Settings.SettingsCurrent.Settings.WindowViewType)
-                {
-                    case WindowViewType.Tabs:
-                        WindowViewHelper.ResetTabsWindow();
-                        break;
-                }
+                //switch (Data.Settings.SettingsCurrent.Settings.WindowViewType)
+                //{
+                //    case WindowViewType.Tabs:
+                //        WindowViewHelper.ResetTabsWindow();
+                //        break;
+                //}
                 Data.Settings.SettingsCurrent.Settings.WindowViewType = type;
                 SetWindow();
             }

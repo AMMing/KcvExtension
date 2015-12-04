@@ -205,18 +205,6 @@ namespace AMing.KcvExtension.Settings.Modules
             }
         }
 
-        void TryFunction(Action action)
-        {
-            try
-            {
-                action();
-            }
-            catch (Exception ex)
-            {
-                RadioHub.Current.SendException(ex);
-                MessageBoxDialog.Show(ex.Message);
-            }
-        }
 
         OverviewViewModel GetOverviewViewModel() =>
             Grabacr07.KanColleViewer.WindowService.Current?.Information?.Overview;
@@ -229,22 +217,22 @@ namespace AMing.KcvExtension.Settings.Modules
         /// 开关声音
         /// </summary>
         void ToggleMute() =>
-            TryFunction(() => GetKanColleWindowViewModel()?.Volume?.ToggleMute());
+            ExceptionHelper.TryFunction(() => GetKanColleWindowViewModel()?.Volume?.ToggleMute());
         /// <summary>
         /// 截图
         /// </summary>
         void TakeScreenshot() =>
-            TryFunction(() => GetKanColleWindowViewModel()?.TakeScreenshot());
+            ExceptionHelper.TryFunction(() => GetKanColleWindowViewModel()?.TakeScreenshot());
         /// <summary>
         /// 舰娘一览
         /// </summary>
         void ShowShipCatalog() =>
-            TryFunction(() => GetOverviewViewModel()?.ShowShipCatalog());
+            ExceptionHelper.TryFunction(() => GetOverviewViewModel()?.ShowShipCatalog());
         /// <summary>
         /// 装备一览
         /// </summary>
         void ShowSlotItemCatalog() =>
-            TryFunction(() => GetOverviewViewModel()?.ShowSlotItemCatalog());
+            ExceptionHelper.TryFunction(() => GetOverviewViewModel()?.ShowSlotItemCatalog());
 
 
         #endregion
